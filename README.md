@@ -17,17 +17,17 @@ Para esto, podemos reconocer de gran utilidad una ecuación derivada de una seri
 
 *Fórmula de Valor Futuro (VF) dada una suma de T anualidades, una tasa de interés del periodo r*
 
-1. $$VF=A*[(1+r)^T-1/r]$$
+$$1. VF=A*[(1+r)^T-1/r]$$
 
 De esta fórmula general se derivan despejes para obtener algún valor desconocido según aquellos datos con los que contamos, tales son los siguientes casos:
 
 *Fórmula para encontrar el valor de Anualidad (A) conociendo Valor Futuro (VF), tasa de interés del periodo (r) y el número de pagos o anualidades (T)*
 
-2. $$Anualidad=(VF/(1+r)^T-1)/r)$$
+$$2. Anualidad=(VF/(1+r)^T-1)/r)$$
 
 *Fórmula para identificar el número de plazos (T) al conocer  el Valor Futuro (VF), tasa de interés del periodo (r) y el monto de Anualidad (A)*
 
-3. $$PlazosT= log((VF*r)/A+1)/log(1+r)$$
+$$3. PlazosT= log((VF*r)/A+1)/log(1+r)$$
 
 *Forma en la que se obtiene el valor de interes del periodo (r), conociendo Valor Futuro (VF), número de plazos (T) y el monto de Anualidad (A)*
 
@@ -40,8 +40,11 @@ Para una mayor representación y entendimiento de estas funciones y su utilidad 
 
 Se nos proporciona el siguiente problema a resolver:
 
+
 *"Un inversionista realiza un pago mensual de $1,200.00 al final de cada mes durante 5 años en los cuales paga una tasa de interés del 6% anual compuesto mensualmente.
+
 ¿Cuál es el valor futuro de esta inversión?"*
+
 
 Comencemos utilizando la Fórmula con el caso 1, es decir, buscamos VF.
 
@@ -59,12 +62,38 @@ $InteresesPeriodo(r)$= 6%/12 = 0.5% = 0.005
 ```{r}
 source("https://raw.githubusercontent.com/Alexa-MorenoLop/Funciones-Anualidades-Vencidas/refs/heads/main/FuncionesAnualidadesVencidas.R")
 
-
-resultadoVF=VF(A=12000,r=0.005,t=60)
+resultadoVF=VF(A=1200,r=0.005,t=60)
 
 resultadoVF
 
 ```
+
+Una vez que hemos encontrado el Valor Futuro podemos utilizarlo para buscar otros valores, que si bien ya conocemos debido a que se nos proporcionaron en el desarrollo del problema, utilizaremos el mismo ejercicio para encontrarlos ya que buscamos comprobar el funcionamiento y eficacia de las fórmulas programadas en R.
+
+Ahora encontremos el valor de la Anualidad, el cual sabemos que es $1,200.00.
+
+```{r}
+
+source("https://raw.githubusercontent.com/Alexa-MorenoLop/Funciones-Anualidades-Vencidas/refs/heads/main/FuncionesAnualidadesVencidas.R")
+
+resultadoA=Anualidad(VF=83724.4,r=0.005,t=60)
+
+resultadoA
+
+```
+
+De igual manera para identificar el valor de T como el número de pagos, conociendo Valor Futuro, Anualidad e intereses del periodo.
+
+```{r}
+source("https://raw.githubusercontent.com/Alexa-MorenoLop/Funciones-Anualidades-Vencidas/refs/heads/main/FuncionesAnualidadesVencidas.R")
+
+resultadoPlazos=Tplazos(VF=83724.4,r=0.005,A=1200)
+
+resultadoPlazos
+
+```
+
+
 
 
 
