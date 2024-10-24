@@ -143,7 +143,7 @@ Partiendo de esta lógica, y después de una serie da cálculos, se llega a la e
 
 **Fórmula General de Anualidades vencidas conciendo el Valor Actual (VA)** 
 
-$$VA=A*[1-(1+r)^-T/r]$$
+$$VA=A*[1-(1+r)^{-T})/r]$$
 
 De esta fórmula general se derivan despejes para obtener valores desconocidos según aquellos datos con los que contamos, tales son los siguientes casos:
 
@@ -153,19 +153,19 @@ De esta fórmula general se derivan despejes para obtener valores desconocidos s
 
 En este caso se trata directamente de la fórmula general.
 
-$$VA=A*[1-(1+r)^-T/r]$$
+$$VA=A*[1-(1+r)^{-T}/r]$$
 
 **Fórmula para encontrar el valor de Anualidad (A) en una anualidad vencida conociendo el Valor Actual.**
 
 *Conociendo Valor Actual (VA), tasa de interés del periodo (r) y el número de pagos o anualidades (T).*
 
-$$AnualidadVA=$$
+$$AnualidadVA=VA/(1-(1+r)^{-T}/r)$$
 
 **Fórmula para identificar el número de pagos (T) en una anualidad vencida conociendo el Valor Actual.**
 
 *Conociendo el Valor Actual (VA), tasa de interés del periodo (r) y el monto de Anualidad (A).*
 
-$$PlazosTVA= $$
+$$PlazosTVA=-log(1-(VA*r)/A)/log(1+r)$$
 
 **Forma en la que se obtiene el valor de interés del periodo (r) conociendo Valor Actual.**
 
