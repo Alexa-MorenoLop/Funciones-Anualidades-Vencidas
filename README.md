@@ -98,7 +98,7 @@ Ahora encontremos el valor de la Anualidad, el cual sabemos que es $1,200.00.
 
 source("https://raw.githubusercontent.com/Alexa-MorenoLop/Funciones-Anualidades-Vencidas/refs/heads/main/FuncionesAnualidadesVencidas.R")
 
-resultadoA=Anualidad(VF=83724.4,r=0.005,t=60)
+resultadoA=Anualidad(VF=83724.04,r=0.005,t=60)
 
 resultadoA
 
@@ -112,7 +112,7 @@ resultadoA
 
 source("https://raw.githubusercontent.com/Alexa-MorenoLop/Funciones-Anualidades-Vencidas/refs/heads/main/FuncionesAnualidadesVencidas.R")
 
-resultadoPlazos=Tplazos(VF=83724.4,r=0.005,A=1200)
+resultadoPlazos=Tplazos(VF=83724.04,r=0.005,A=1200)
 
 resultadoPlazos
 
@@ -127,7 +127,7 @@ Para finalizar con este ejemplo, a continuación es necesario realizar el cálcu
 ```{r}
 source("https://raw.githubusercontent.com/Alexa-MorenoLop/Funciones-Anualidades-Vencidas/refs/heads/main/FuncionesAnualidadesVencidas.R")
 
-resultadoTasaPeriodo=TasaPeriodo(VF=83724.4,A=1200,t=60,paro=10*(10^-18))
+resultadoTasaPeriodo=TasaPeriodo(VF=83724.04,A=1200,t=60,paro=10*(10^-18))
 
 resultadoTasaPeriodo
 
