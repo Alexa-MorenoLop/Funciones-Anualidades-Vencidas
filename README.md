@@ -7,7 +7,7 @@ El siguiente trabajo contiene las funciones programadas en R utilizadas en el te
 
 Es posible cargar las funciones realizadas por medio del siguiente comando pegandolo en la consola de su workspace. 
 ```{r}
-source("https://raw.githubusercontent.com/Alexa-MorenoLop/Funciones-Anualidades-Vencidas/refs/heads/main/FuncionesAnualidadesVencidas%20(1).R")
+source("https://raw.githubusercontent.com/Alexa-MorenoLop/Funciones-Anualidades-Vencidas/refs/heads/main/FuncionesAnualidadesVencidas.R")
 ```
 
 # Anualidades Vencidas
@@ -78,7 +78,7 @@ $InteresesPeriodo(r)$= $6%/12 = 0.5% = 0.005$
 
 ```{r}
 
-source("https://raw.githubusercontent.com/Alexa-MorenoLop/Funciones-Anualidades-Vencidas/refs/heads/main/FuncionesAnualidadesVencidas%20(1).R")
+source("https://raw.githubusercontent.com/Alexa-MorenoLop/Funciones-Anualidades-Vencidas/refs/heads/main/FuncionesAnualidadesVencidas.R")
 
 resultadoVF=VF(A=1200,r=0.005,t=60)
 
@@ -96,7 +96,7 @@ Ahora encontremos el valor de la Anualidad, el cual sabemos que es $1,200.00.
 
 ```{r}
 
-source("https://raw.githubusercontent.com/Alexa-MorenoLop/Funciones-Anualidades-Vencidas/refs/heads/main/FuncionesAnualidadesVencidas%20(1).R")
+source("https://raw.githubusercontent.com/Alexa-MorenoLop/Funciones-Anualidades-Vencidas/refs/heads/main/FuncionesAnualidadesVencidas.R")
 
 resultadoA=Anualidad(VF=83724.4,r=0.005,t=60)
 
@@ -110,7 +110,7 @@ resultadoA
 
 ```{r}
 
-source("https://raw.githubusercontent.com/Alexa-MorenoLop/Funciones-Anualidades-Vencidas/refs/heads/main/FuncionesAnualidadesVencidas%20(1).R")
+source("https://raw.githubusercontent.com/Alexa-MorenoLop/Funciones-Anualidades-Vencidas/refs/heads/main/FuncionesAnualidadesVencidas.R")
 
 resultadoPlazos=Tplazos(VF=83724.4,r=0.005,A=1200)
 
@@ -125,13 +125,15 @@ resultadoPlazos
 Para finalizar con este ejemplo, a continuación es necesario realizar el cálculo de los Intereses del Periodo (r) con el algoritmo programado.
 
 ```{r}
-source("https://raw.githubusercontent.com/Alexa-MorenoLop/Funciones-Anualidades-Vencidas/refs/heads/main/FuncionesAnualidadesVencidas%20(1).R")
+source("https://raw.githubusercontent.com/Alexa-MorenoLop/Funciones-Anualidades-Vencidas/refs/heads/main/FuncionesAnualidadesVencidas.R")
 
 resultadoTasaPeriodo=TasaPeriodo(VF=83724.4,A=1200,t=60,paro=10*(10^-18))
 
 resultadoTasaPeriodo
 
 ```
+
+# Anualidades Vencidas con Valor Actual
 
 Ahora bien, también se nos pueden presentar problemas donde ahora el *Valor Actual* (VA) este presente, es decir, el valor al comienzo del plazo.
 
@@ -198,7 +200,7 @@ $InteresesPeriodo(r)$= $14%/12 = 3.5% = 0.035$
 
 ```{r}
 
-source("https://raw.githubusercontent.com/Alexa-MorenoLop/Funciones-Anualidades-Vencidas/refs/heads/main/FuncionesAnualidadesVencidas%20(1).R")
+source("https://raw.githubusercontent.com/Alexa-MorenoLop/Funciones-Anualidades-Vencidas/refs/heads/main/FuncionesAnualidadesVencidas.R")
 
 resultadoVA=VA(A=10000,r=0.035,t=16)
 
@@ -214,7 +216,7 @@ Si bien conocemos el valor por la información dada en el problema, comprobaremo
 
 ```{r}
 
-source("https://raw.githubusercontent.com/Alexa-MorenoLop/Funciones-Anualidades-Vencidas/refs/heads/main/FuncionesAnualidadesVencidas%20(1).R")
+source("https://raw.githubusercontent.com/Alexa-MorenoLop/Funciones-Anualidades-Vencidas/refs/heads/main/FuncionesAnualidadesVencidas.R")
 
 resultadoAnualidadVA=AnualidadVA(VA=120941.2,r=0.035,t=16)
 
@@ -222,9 +224,38 @@ resultadoAnualidadVA
 
 ```
 
+**Cálculo del número de pagos (T) conociendo el Valor Actual.**
 
+*Conociendo el Valor Actual (VA), tasa de interés del periodo (r) y el monto de Anualidad (A).*
 
+```{r}
 
+source("https://raw.githubusercontent.com/Alexa-MorenoLop/Funciones-Anualidades-Vencidas/refs/heads/main/FuncionesAnualidadesVencidas.R")
 
+resultadoPlazoVA=TplazosVA(VA=120941.2,r=0.035,A=10000)
+
+resultadoPlazoVA
+
+```
+**Cálculo de la Tasa del periodo (r) conociendo Valor Actual**
+
+*Conociendo Valor Actual (VA), número de Plazos (T) y el monto de Anualidad (A).*
+
+Para finalizar con este ejemplo, a continuación es necesario realizar el cálculo de los Intereses del Periodo (r) con el algoritmo programado.
+
+```{r}
+source("https://raw.githubusercontent.com/Alexa-MorenoLop/Funciones-Anualidades-Vencidas/refs/heads/main/FuncionesAnualidadesVencidas.R")
+
+resultadoTasaPeriodoVA=TasaPeriodoVA(VA=120941.2,A=10000,t=16,paro=10*(10^-18))
+
+resultadoTasaPeriodoVA
+
+```
+
+La información utilizada fue obtenida de las notas "Anualidades" realizadas por el Dr. Oscar V. De la Torre Torres
+https://oscardelatorretorres.shinyapps.io/02matFin04Anualidades/#fig:figura42
+
+Así como sacada del libro: 
+Vidaurri Aguirre, H. (2017). Matemáticas Financieras (6.a ed.). Cinthia Chávez Ceballos. https://www.dropbox.com/scl/fi/8tvbn7asxqvlbfim1g5n1/libroMateFinancieras.pdf?rlkey=s1dwrr7fe03cswd6ccmndi3hk&e=12&st=bn50sqdl&dl=0
 
 
