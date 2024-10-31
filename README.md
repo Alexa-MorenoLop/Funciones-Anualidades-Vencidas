@@ -24,7 +24,7 @@ Para esto, podemos reconocer de gran utilidad una ecuación derivada de una seri
 
 *Dada la Anualidad (A), Tasa de interés del periodo (r) y el número de de anulidades (T)*
 
-$$VF=A*[(1+r)^T-1/r]$$
+$$VF=A\frac{(1+r)^T-1}{r}$$
 
 De esta fórmula general se derivan despejes para obtener algún valor desconocido según aquellos datos con los que contamos, tales son los siguientes casos:
 
