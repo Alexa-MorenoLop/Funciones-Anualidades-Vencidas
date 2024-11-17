@@ -32,13 +32,13 @@ De esta fórmula general se derivan despejes para obtener algún valor desconoci
 
 *Conociendo Valor Futuro (VF), tasa de interés del periodo (r) y el número de pagos o anualidades (T)*
 
-$$Anualidad=(VF/(1+r)^T-1)/r)$$
+$$Anualidad=\frac{VF}{\frac{(1+r)^T-1}{r}}$$
 
 **Fórmula para identificar el número de pagos o plazo (T) en una anualidad vencida**
 
 *Conociendo el Valor Futuro (VF), tasa de interés del periodo (r) y el monto de Anualidad (A)*
 
-$$PlazosT= log((VF*r)/A+1)/log(1+r)$$
+$$PlazosT= \frac{log(\frac{VF*r}{A}+1)}{log(1+r)}$$
 
 **Forma en la que se obtiene el valor de interes del periodo (r)**
 
@@ -46,7 +46,7 @@ $$PlazosT= log((VF*r)/A+1)/log(1+r)$$
 
 Para este caso en especifico se es necesario realizar el cálculo al despejar los Intereses del Periodo (r), sin embargo, no es posible hacerlo de forma directa con la fórmula de VF de Anualidades Vencidas, ya que al intentarlo, lo máximo a l que llegariamos sería un despeje donde r se encontraria a ambos lados de la igualdad.
 
-$$(VF/A)*r=[((1+r)^T)-1]$$
+$$\frac{VF}{A}*r=[((1+r)^T)-1]$$
 
 Por lo que, para llevar a cabo este cálculo se vió necesario el uso de un algoritmo programado en R, el cual esta basado en el método de bisección, esto lo podemos explicar como la búsqueda de un valor (en nuestro caso r) entre un valor máximo y un valor mínimo.La actividad del programa que realiza podría explicarse como "partir a la mitad" el área entre estos dos valores y tomar el lado de esta división que se acerque al valor buscado, esto se repetirá de forma iterativa, es decir, se dividirá nuevamente, hasta encontrar el valor requerido, o bien, se llegue a un limite de decimales establecido.
 
@@ -143,7 +143,7 @@ Partiendo de esta lógica, y después de una serie da cálculos, se llega a la e
 
 **Fórmula General de Anualidades vencidas conciendo el Valor Actual (VA)** 
 
-$$VA=A*[1-(1+r)^{-T})/r]$$
+$$VA=A\frac{1-(1+r)^{-T}}{r}$$
 
 De esta fórmula general se derivan despejes para obtener valores desconocidos según aquellos datos con los que contamos, tales son los siguientes casos:
 
@@ -153,19 +153,20 @@ De esta fórmula general se derivan despejes para obtener valores desconocidos s
 
 En este caso se trata directamente de la fórmula general.
 
-$$VA=A*[1-(1+r)^{-T}/r]$$
+$$VA=A\frac{1-(1+r)^{-T}}{r}$$
+
 
 **Fórmula para encontrar el valor de Anualidad (A) en una anualidad vencida conociendo el Valor Actual.**
 
 *Conociendo Valor Actual (VA), tasa de interés del periodo (r) y el número de pagos o anualidades (T).*
 
-$$AnualidadVA=VA/(1-(1+r)^{-T}/r)$$
+$$AnualidadVA=\frac{VA}{\frac{1-(1+r)^{-T}}{r}}$$
 
 **Fórmula para identificar el número de pagos (T) en una anualidad vencida conociendo el Valor Actual.**
 
 *Conociendo el Valor Actual (VA), tasa de interés del periodo (r) y el monto de Anualidad (A).*
 
-$$PlazosTVA=-log(1-(VA*r)/A)/log(1+r)$$
+$$PlazosTVA=\frac{-log(1-\frac{VA*r}{A})}{log(1+r)}$$
 
 **Forma en la que se obtiene el valor de interés del periodo (r) conociendo Valor Actual.**
 
